@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import say_hello
+from home.views import say_hello, add_topic, add_topic_for_real, add_book, add_book_for_real
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', say_hello),
+    path("admin/", admin.site.urls),
+    path("", say_hello),
+    path("add_topic/", add_topic, name="add_topic"),
+    path("add_topic/for/real/", add_topic_for_real, name="add_topic_for_real"),
+    path("add_book/", add_book, name="add_book"),
+    path("add_book/for/real/", add_book_for_real, name="add_book_for_real"),
 ]
